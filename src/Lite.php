@@ -1,17 +1,32 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: ZhangZijing
  * Date: 2019/1/9
  * Time: 14:20
  */
+
 namespace PhalApi\Session;
+
 class Lite
 {
-    public function __construct()
+    public function __construct($name = 'sha1', $maxlifetime = 3600, bool $regenerate_id = false)
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            ini_set("session.use_cookies", 1); //防止注入
+            ini_set("session.use_only_cookies", 1); //防止注入
+            ini_set("session.cookie_httponly", 1); //防止XSS
+            ini_set('session.gc_maxlifetime', $maxlifetime); //设置过期时间
+            ini_set("session.use_trans_sid", 0);
+            session_name($name);
+            session_start();
+            if ($regenerate_id == true) {
+                session_regenerate_id(true);
+            }
+        }
     }
+
     public function __get($key)
     {
         if (isset($_SESSION[$key]))

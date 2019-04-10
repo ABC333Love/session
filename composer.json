@@ -3,7 +3,7 @@
   "description": "PhalApi 2.x 扩展类库：Session 操作工具",
   "type": "library",
   "keywords": [
-    "phalapi", "phalapi-session", "session"
+    "phalapi", "abclove-phalapi-session", "session"
   ],
   "license": "GPL-3.0+",
   "minimum-stability": "dev",
