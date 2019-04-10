@@ -1,5 +1,5 @@
 {
-  "name": "phalapi/session",
+  "name": "abclove/session",
   "description": "PhalApi 2.x 扩展类库：Session 操作工具",
   "type": "library",
   "keywords": [
@@ -18,7 +18,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "PhalApi\\Session\\": "src"
+      "abclove\\Session\\": "src"
     }
   }
 }
