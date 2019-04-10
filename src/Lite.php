@@ -7,7 +7,7 @@
  * Time: 14:20
  */
 
-namespace PhalApi\Session;
+namespace Abclove\Session;
 
 class Lite
 {
